@@ -57,7 +57,6 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  introspection: true,
 });
 
 
@@ -68,9 +67,7 @@ const port = Number.parseInt(process.env.PORT) || 4000;
 //  2. installs your ApolloServer instance as middleware
 //  3. prepares your app to handle incoming requests
 const { url } = await startStandaloneServer(server, {
-  listen: {
-    port,
-  },
+  listen: {port: port},
 });
 
 console.log(`🚀 Server listening at: ${url}`);
