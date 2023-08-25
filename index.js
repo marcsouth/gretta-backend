@@ -40,6 +40,10 @@ const resolvers = {
       db.clients = db.clients.filter((c) => c.id !== args.id);
       return db.clients;
     },
+    deleteProcessor(_, args) {
+      db.processors = db.processors.filter((p) => p.id !== args.id);
+      return db.processors;
+    },
     addClient(_, args) {
       let client = {
         ...args.client,
